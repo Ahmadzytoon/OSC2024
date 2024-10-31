@@ -19,32 +19,32 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Ahmad.Orange',
             'email' => 'admin@gmail.com',
-            'password' => Hash::make('admin'),
+            'password' => Hash::make('orange123'),
             'image' => 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png',
         ]);
 
         DB::table('users')->insert([
-            'name' => 'Sinan Kamal',
-            'email' => 'sinan.kamal@orange.com',
-            'password' => Hash::make('orange'),
+            'name' => 'Ammar Mesmar',
+            'email' => 'ammar.mismar@orange.com',
+            'password' => Hash::make('orange123'),
             'image' => 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png',
         ]);
         DB::table('users')->insert([
-            'name' => 'Omar Mashini',
+            'name' => 'Omar Al Mashini',
             'email' => 'omar.almashini@orange.com',
-            'password' => Hash::make('orange'),
+            'password' => Hash::make('orange123'),
             'image' => 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png',
         ]);
         DB::table('users')->insert([
-            'name' => 'Mohannad Abu Maizer',
+            'name' => 'Muhannad Abu Maizer',
             'email' => 'muhannad.abumaizar@orange.com',
-            'password' => Hash::make('orange'),
+            'password' => Hash::make('orange123'),
             'image' => 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png',
         ]);
         DB::table('users')->insert([
-            'name' => 'Nicola fanous',
-            'email' => 'nicola.fanous@orange.com',
-            'password' => Hash::make('orange'),
+            'name' => 'Salah Eddin Mahasneh',
+            'email' => 'salaheddin.mahasneh@orange.com',
+            'password' => Hash::make('orange123'),
             'image' => 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png',
         ]);
 
