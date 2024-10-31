@@ -166,7 +166,7 @@
 
 
             <div class=" col-lg-6 col-md-8 mt-4 mt-md-0">
-                <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                     <i class="bi bi-coin"></i>
                     <h4>Robustness Of the Economic Model</h4>
 
@@ -182,7 +182,7 @@
                 </div>
             </div>
             <div class=" col-lg-6 col-md-8 mt-4 mt-md-0">
-                <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                     <i class="bi bi-clipboard2-check"></i>
                     <h4>Solution Maturity</h4>
                     <div style="  margin-top: 29px;">
@@ -197,7 +197,7 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-8 mt-4 mt-md-0">
-                <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                     <i class="bi bi-lightbulb-fill"></i>
                     <h4>Scalability And Innovation</h4>
                     <div style="  margin-top: 29px;">
@@ -212,7 +212,7 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-8 mt-4 mt-md-0">
-                <div class="icon-box" >
+                <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                     <i class="bi bi-award-fill"></i>
                     <h4>Pitch Quality</h4>
                     <div style="  margin-top: 29px;">
@@ -241,7 +241,7 @@
         </div>
 
         <div class="row">
-            <div class="icon-box submit" data-aos-delay="200">
+            <div class="icon-box submit" data-aos-delay="100">
                 <button type="submit" class="btn btn-dark"
                     style="
                   font-size: 20px;
