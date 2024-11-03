@@ -301,7 +301,7 @@
         document.querySelector("form").addEventListener("submit", function() {
             // Disable the submit button
             document.getElementById("submitButton").disabled = true;
-            document.getElementById("submitButton").innerText = "Submitting...";
+            document.getElementById("submitButton").innerText = "Submitted";
         });
     </script>
 

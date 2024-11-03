@@ -121,7 +121,7 @@ BagGuard
 
         <nav id="navbar" class="navbar order-last order-lg-0">
         <h6 style="color: white;"><span style="color: #ff7900;">Welcome, </span> {{$data->name}}</h6>
-        <a href="{{route('logout')}}" class="get-started-btn scrollto pr-5">Logout</a>
+        <a href="{{route('logout')}}" style="padding-right: 2vw" class="get-started-btn scrollto">Logout</a>
         <ul>
           {{-- <li><h4>welcom,</h4></li> --}}
 
@@ -190,7 +190,6 @@ BagGuard
                  {{session()->get('voted')}} <i class="bi bi-clipboard2-check-fill"></i>
                 </div>
             @endif
-        @if($teams === [])
             <div class="section-title">
             <h2>Team Selection</h2>
             <h3>OSC #2024</h3>
@@ -278,14 +277,6 @@ BagGuard
 
 
             </div>
-        @else
-            <div class="row "></div>
-            @if(! session()->get('voted'))
-                <div class="alert alert-warning" role="alert" id="dev" >
-                    The team was voted in successfully <i class="bi bi-clipboard2-check-fill"></i>
-                </div>
-            @endif
-        @endif
       </div>
     </section><!-- End Team Section -->
 

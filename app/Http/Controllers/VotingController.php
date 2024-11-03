@@ -66,7 +66,9 @@ class VotingController extends Controller
         ]);
         $average = ($request->adaptation_to_the_market + $request->robustness_of_the_economic_model + $request->solution_maturity + $request->scalability_and_innovation + $request->pitch_quality) / 5;
 
-        $is_voted_before = Rate::where('user_id', $user_id)->get()->first();
+        $is_voted_before = Rate::where('user_id', $user_id)
+                                ->where('team_id', $request->team_id)
+                                ->first();
 
         if($is_voted_before)
         {
@@ -100,16 +102,18 @@ class VotingController extends Controller
     public function show($id)
     {
         $user_id = session()->get('id');
-        $is_voted_before = Rate::where('user_id', $user_id)->get()->first();
+        $user = User::where('id', $user_id)->first();
+        $team = Team::where('id', $id)->get();
+
+        $is_voted_before = Rate::where('user_id', $user_id)
+                                ->where('team_id', $id)
+                                ->first();
 
         if($is_voted_before)
         {
             return redirect()->route('user.voting.index')->with('voted', 'You are already voted before.');
         }
 
-        $team = Team::where('id', $id)->get();
-        $user_id = session()->get('id');
-        $user = User::where('id', $user_id)->first();
         return view('website.vote', ['data' => $team, 'user' => $user]);
     }
 
