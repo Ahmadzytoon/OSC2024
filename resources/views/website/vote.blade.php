@@ -152,7 +152,7 @@
                     <i class="bi bi-shop"></i>
                     <h4>Adaptation To The Market</h4>
                         <div style="  margin-top: 29px;">
-                            <label class="lablered"  for="contactChoice1"style="margin-left: 20px;font-size: 15px;">Very Poor</label> 
+                            <label class="lablered"  for="contactChoice1"style="margin-left: 20px;font-size: 15px;">Very Poor</label>
                             <input type="radio" id="radio" name="adaptation_to_the_market"value="1" required />
                             <input type="radio" id="radio" name="adaptation_to_the_market" value="2" />
                             <input type="radio" id="radio" name="adaptation_to_the_market" value="3" />
@@ -171,7 +171,7 @@
                     <h4>Robustness Of the Economic Model</h4>
 
                     <div style="  margin-top: 29px;">
-                      <label class="lablered"  for="contactChoice1"style="margin-left: 20px;font-size: 15px;">Very Poor</label> 
+                      <label class="lablered"  for="contactChoice1"style="margin-left: 20px;font-size: 15px;">Very Poor</label>
                       <input type="radio" id="radio" name="robustness_of_the_economic_model"value="1" required />
                       <input type="radio" id="radio" name="robustness_of_the_economic_model" value="2" />
                       <input type="radio" id="radio" name="robustness_of_the_economic_model" value="3" />
@@ -186,7 +186,7 @@
                     <i class="bi bi-clipboard2-check"></i>
                     <h4>Solution Maturity</h4>
                     <div style="  margin-top: 29px;">
-                      <label class="lablered"  for="contactChoice1"style="margin-left: 20px;font-size: 15px;">Very Poor</label> 
+                      <label class="lablered"  for="contactChoice1"style="margin-left: 20px;font-size: 15px;">Very Poor</label>
                       <input type="radio" id="radio" name="solution_maturity"value="1" required />
                       <input type="radio" id="radio" name="solution_maturity" value="2" />
                       <input type="radio" id="radio" name="solution_maturity" value="3" />
@@ -201,7 +201,7 @@
                     <i class="bi bi-lightbulb-fill"></i>
                     <h4>Scalability And Innovation</h4>
                     <div style="  margin-top: 29px;">
-                      <label class="lablered"  for="contactChoice1"style="margin-left: 20px;font-size: 15px;">Very Poor</label> 
+                      <label class="lablered"  for="contactChoice1"style="margin-left: 20px;font-size: 15px;">Very Poor</label>
                       <input type="radio" id="radio" name="scalability_and_innovation"value="1" required />
                       <input type="radio" id="radio" name="scalability_and_innovation" value="2" />
                       <input type="radio" id="radio" name="scalability_and_innovation" value="3" />
@@ -216,7 +216,7 @@
                     <i class="bi bi-award-fill"></i>
                     <h4>Pitch Quality</h4>
                     <div style="  margin-top: 29px;">
-                      <label class="lablered"  for="contactChoice1"style="margin-left: 20px;font-size: 15px;">Very Poor</label> 
+                      <label class="lablered"  for="contactChoice1"style="margin-left: 20px;font-size: 15px;">Very Poor</label>
                       <input type="radio" id="radio" name="pitch_quality"value="1" required />
                       <input type="radio" id="radio" name="pitch_quality" value="2" />
                       <input type="radio" id="radio" name="pitch_quality" value="3" />
@@ -242,7 +242,7 @@
 
         <div class="row">
             <div class="icon-box submit" data-aos-delay="100">
-                <button type="submit" class="btn btn-dark"
+                <button type="submit" class="btn btn-dark" id="submitButton"
                     style="
                   font-size: 20px;
                   width: 149px;
@@ -296,6 +296,15 @@
 
     <!-- Template Main JS File -->
     <script src="/assets/js/main.js"></script>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function() {
+            // Disable the submit button
+            document.getElementById("submitButton").disabled = true;
+            document.getElementById("submitButton").innerText = "Submitting...";
+        });
+    </script>
+
 
 </body>
 

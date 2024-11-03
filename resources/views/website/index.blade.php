@@ -41,7 +41,7 @@
               position: relative;
               overflow: hidden;
               min-height: 245px;
-          } 
+          }
 
           }
           .img-fluid {
@@ -77,20 +77,20 @@
             }
         </style>
 @if(session()->get('voted'))
-        <script>   
+        <script>
                 document.addEventListener('DOMContentLoaded', function() {
                     scrollToElement();
                 });
-        
+
                 // التنقل إلى العنصر عند تغيير الهاش (على سبيل المثال، عند الانتقال من صفحة لأخرى)
                 window.addEventListener('hashchange', function() {
                     scrollToElement();
                 });
-        
+
                 // الدالة للتمرير إلى العنصر الذي يحمل الهاش المحدد
                 function scrollToElement() {
                     var hash ="AAA" // استخراج الهاش من رابط الصفحة
-        
+
                     // التحقق مما إذا كان الهاش غير فارغ وموجود في الصفحة
                     if (hash && document.getElementById(hash)) {
                         var targetElement = document.getElementById(hash);
@@ -100,9 +100,9 @@
                     }
                 }
            </script>
-  @endif              
+  @endif
 </head>
-<!-- 
+<!--
 OptiGuide
 Solar-AgriBot
 AiGo
@@ -115,7 +115,7 @@ BagGuard
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
-      
+
       <h1 class="logo me-auto"><a href="{{route('user.voting.index')}}" class="logo me-auto"><img src="/assets/logo.svg" alt="JuryVote"></a><a href="index.html">JuryVote</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
 
@@ -123,19 +123,19 @@ BagGuard
         <h6 style="color: white;"><span style="color: #ff7900;">Welcome, </span> {{$data->name}}<h5>
         <ul>
           {{-- <li><h4>welcom,</h4></li> --}}
-    
+
           {{-- <li><a class="nav-link scrollto" href="#team">Team</a></li> --}}
           {{-- <li><a class="nav-link scrollto" href="{{route('logout')}}">Logout</a></li> --}}
-      
+
         </ul>
           {{-- <i class="bi bi-list mobile-nav-toggle"></i> --}}
       </nav><!-- .navbar -->
 
       {{-- <a href="#team" class="get-started-btn scrollto">Start voting</a> --}}
     </div>
-  
+
   </header><!-- End Header -->
-  
+
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
@@ -150,7 +150,7 @@ BagGuard
         </div>
       </div>
     </div>
-  
+
   </section><!-- End Hero -->
 
   <main id="main" >
@@ -183,107 +183,108 @@ BagGuard
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-bg" >
       <div class="container" data-aos="fade-up" >
-        @if(session()->get('voted'))
-
+            @if(session()->get('voted'))
               <div class="row "></div>
               <div class="alert alert-warning" role="alert" id="dev" >
-                 The team was voted in successfully <i class="bi bi-clipboard2-check-fill"></i>
+                 {{session()->get('voted')}} <i class="bi bi-clipboard2-check-fill"></i>
                 </div>
-              @endif
-              <script>
-                  setTimeout(function() {
-                    document.getElementById('dev').style.display = 'none';
-                }, 8000);
-              </script>  
-
-        <div class="section-title">
-          <h2>Team Selection</h2>
-          <h3>OSC #2024</h3>
-        </div>
-
-        <div class="row"style="justify-content: center;" >
-          {{-- Phytobase --}}
-          <div class="col-lg-3 col-md-5 col-sm-6  d-flex align-items-stretch">
-            <div class="member"  data-aos-delay="100">
-              <div class="member-img">
-                <img src="/assets/img/team/Phytobase.jpeg" class="img-fluid" alt="Tefli">
-                <div class="social">
-                  @if (in_array("1", $teams))
-                  <h6 style="/* color: #ff7900; *//* background-color: black; */transition: none;/* color: #111111; */margin: 0 3px;border-radius: 5px;width: 84px;height: 36px;background: #2b2b2b;display: inline-flex;align-items: center;justify-content: center;transition: none;color: #f8f9fa;">Voted</h6>
-                  @else
-                  <a href="{{route('user.voting.show',1)}}">Vote</i></a>
-                  @endif
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Phytobase</h4>
-                <span>A technological system using IoT and AI in agriculture reduces water consumption by 60% and fertilizer use by 40%, lowering costs and boosting production.</span>
-              </div>
+            @endif
+        @if($teams === [])
+            <div class="section-title">
+            <h2>Team Selection</h2>
+            <h3>OSC #2024</h3>
             </div>
-          </div>          
-          {{-- Deep sea Explorer --}}
-          <div class="col-lg-3 col-md-5 col-sm-6  d-flex align-items-stretch">
-            <div class="member" data-aos-delay="100">
-              <div class="member-img">
-                <img src="/assets/img/team/Deep sea Explorer.jpeg" class="img-fluid" alt="AiGo">
-                <div class="social">
-                  @if (in_array("2", $teams))
-                  <h6 style="/* color: #ff7900; *//* background-color: black; */transition: none;/* color: #111111; */margin: 0 3px;border-radius: 5px;width: 84px;height: 36px;background: #2b2b2b;display: inline-flex;align-items: center;justify-content: center;transition: none;color: #f8f9fa;">Voted</h6>                  
-                  @else
-                      <a href="{{route('user.voting.show',2)}}">Vote</i></a>
-                  @endif
+
+            <div class="row"style="justify-content: center;" >
+            {{-- Phytobase --}}
+            <div class="col-lg-3 col-md-5 col-sm-6  d-flex align-items-stretch">
+                <div class="member"  data-aos-delay="100">
+                <div class="member-img">
+                    <img src="/assets/img/team/Phytobase.jpeg" class="img-fluid" alt="Tefli">
+                    <div class="social">
+                    @if (in_array("1", $teams))
+                    <h6 style="/* color: #ff7900; *//* background-color: black; */transition: none;/* color: #111111; */margin: 0 3px;border-radius: 5px;width: 84px;height: 36px;background: #2b2b2b;display: inline-flex;align-items: center;justify-content: center;transition: none;color: #f8f9fa;">Voted</h6>
+                    @else
+                    <a href="{{route('user.voting.show',1)}}">Vote</i></a>
+                    @endif
+                    </div>
                 </div>
-              </div>
-              <div class="member-info">
-                <h4>Deep sea Explore</h4>
-                <span>Deep Sea Explorer offers underwater filming, live broadcasting, and a virtual diving experience using VR-controlled robots.</span>
-              </div>
-            </div>
-          </div>
-          {{-- Saver Bot --}}
-          <div class="col-lg-3 col-md-5 col-sm-6  d-flex align-items-stretch">
-            <div class="member" data-aos-delay="100">
-              <div class="member-img">
-                <img src="/assets/img/team/Saver Bot.jpeg" class="img-fluid" alt="Solar-AgriBot">
-                <div class="social">
-                  @if (in_array("3", $teams))
-                  <h6 style="/* color: #ff7900; *//* background-color: black; */transition: none;/* color: #111111; */margin: 0 3px;border-radius: 5px;width: 84px;height: 36px;background: #2b2b2b;display: inline-flex;align-items: center;justify-content: center;transition: none;color: #f8f9fa;">Voted</h6>                  
-                  @else
-                      <a href="{{route('user.voting.show',3)}}">Vote</i></a>
-                  @endif
+                <div class="member-info">
+                    <h4>Phytobase</h4>
+                    <span>A technological system using IoT and AI in agriculture reduces water consumption by 60% and fertilizer use by 40%, lowering costs and boosting production.</span>
                 </div>
-              </div>
-              <div class="member-info">
-                <h4>Saver Bot</h4>
-                <span>This project develops a quadruped robot with AI and a thermal camera to detect survivors and navigate rough terrain in disaster zones.</span>
-              </div>
-            </div>
-          </div>
-          {{-- ARFL Robot --}}
-          <div class="col-lg-3 col-md-5 col-sm-6 d-flex align-items-stretch">
-            <div class="member"   data-aos-delay="100">
-              <div class="member-img">
-                <img src="/assets/img/team/ARFL.jpeg" class="img-fluid" alt="OptiGuide">
-                <div class="social">
-                  @if (in_array("4", $teams))
-                  <h6 style="/* color: #ff7900; *//* background-color: black; */transition: none;/* color: #111111; */margin: 0 3px;border-radius: 5px;width: 84px;height: 36px;background: #2b2b2b;display: inline-flex;align-items: center;justify-content: center;transition: none;color: #f8f9fa;">Voted</h6>      
-                  @else
-                      <a href="{{route('user.voting.show',4)}}">Vote</i></a>              
-                  @endif  
                 </div>
-               </div>
-              <div class="member-info">
-                <h4>ARFL Robot</h4>
-                <span>This project develops a robot that uses AI, a camera, and a laser sensor to detect, measure, and fill potholes automatically.</span>
-              </div>
             </div>
-          </div>
-          
+            {{-- Deep sea Explorer --}}
+            <div class="col-lg-3 col-md-5 col-sm-6  d-flex align-items-stretch">
+                <div class="member" data-aos-delay="100">
+                <div class="member-img">
+                    <img src="/assets/img/team/Deep sea Explorer.jpeg" class="img-fluid" alt="AiGo">
+                    <div class="social">
+                    @if (in_array("2", $teams))
+                    <h6 style="/* color: #ff7900; *//* background-color: black; */transition: none;/* color: #111111; */margin: 0 3px;border-radius: 5px;width: 84px;height: 36px;background: #2b2b2b;display: inline-flex;align-items: center;justify-content: center;transition: none;color: #f8f9fa;">Voted</h6>
+                    @else
+                        <a href="{{route('user.voting.show',2)}}">Vote</i></a>
+                    @endif
+                    </div>
+                </div>
+                <div class="member-info">
+                    <h4>Deep sea Explore</h4>
+                    <span>Deep Sea Explorer offers underwater filming, live broadcasting, and a virtual diving experience using VR-controlled robots.</span>
+                </div>
+                </div>
+            </div>
+            {{-- Saver Bot --}}
+            <div class="col-lg-3 col-md-5 col-sm-6  d-flex align-items-stretch">
+                <div class="member" data-aos-delay="100">
+                <div class="member-img">
+                    <img src="/assets/img/team/Saver Bot.jpeg" class="img-fluid" alt="Solar-AgriBot">
+                    <div class="social">
+                    @if (in_array("3", $teams))
+                    <h6 style="/* color: #ff7900; *//* background-color: black; */transition: none;/* color: #111111; */margin: 0 3px;border-radius: 5px;width: 84px;height: 36px;background: #2b2b2b;display: inline-flex;align-items: center;justify-content: center;transition: none;color: #f8f9fa;">Voted</h6>
+                    @else
+                        <a href="{{route('user.voting.show',3)}}">Vote</i></a>
+                    @endif
+                    </div>
+                </div>
+                <div class="member-info">
+                    <h4>Saver Bot</h4>
+                    <span>This project develops a quadruped robot with AI and a thermal camera to detect survivors and navigate rough terrain in disaster zones.</span>
+                </div>
+                </div>
+            </div>
+            {{-- ARFL Robot --}}
+            <div class="col-lg-3 col-md-5 col-sm-6 d-flex align-items-stretch">
+                <div class="member"   data-aos-delay="100">
+                <div class="member-img">
+                    <img src="/assets/img/team/ARFL.jpeg" class="img-fluid" alt="OptiGuide">
+                    <div class="social">
+                    @if (in_array("4", $teams))
+                    <h6 style="/* color: #ff7900; *//* background-color: black; */transition: none;/* color: #111111; */margin: 0 3px;border-radius: 5px;width: 84px;height: 36px;background: #2b2b2b;display: inline-flex;align-items: center;justify-content: center;transition: none;color: #f8f9fa;">Voted</h6>
+                    @else
+                        <a href="{{route('user.voting.show',4)}}">Vote</i></a>
+                    @endif
+                    </div>
+                </div>
+                <div class="member-info">
+                    <h4>ARFL Robot</h4>
+                    <span>This project develops a robot that uses AI, a camera, and a laser sensor to detect, measure, and fill potholes automatically.</span>
+                </div>
+                </div>
+            </div>
 
 
 
-        </div>
 
+            </div>
+        @else
+            <div class="row "></div>
+            @if(! session()->get('voted'))
+                <div class="alert alert-warning" role="alert" id="dev" >
+                    The team was voted in successfully <i class="bi bi-clipboard2-check-fill"></i>
+                </div>
+            @endif
+        @endif
       </div>
     </section><!-- End Team Section -->
 
@@ -297,7 +298,7 @@ BagGuard
     <div class="container d-md-flex py-4">
 
       <div class="me-md-auto text-center text-md-start">
-    
+
         <!-- <div class="copyright">
           &copy; Copyright <strong><span>Orange</span></strong>. powered by Orange Digital Center
         </div> -->
