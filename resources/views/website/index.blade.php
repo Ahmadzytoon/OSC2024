@@ -120,7 +120,8 @@ BagGuard
       <!-- Uncomment below if you prefer to use an image logo -->
 
         <nav id="navbar" class="navbar order-last order-lg-0">
-        <h6 style="color: white;"><span style="color: #ff7900;">Welcome, </span> {{$data->name}}<h5>
+        <h6 style="color: white;"><span style="color: #ff7900;">Welcome, </span> {{$data->name}}</h6>
+        <a href="{{route('logout')}}" class="get-started-btn scrollto pr-5">Logout</a>
         <ul>
           {{-- <li><h4>welcom,</h4></li> --}}
 
