@@ -24,13 +24,15 @@ class CreateRatesTable extends Migration
             $table->integer('pitch_quality');
             // $table->integer('average');
             $table->double('average', 15, 3);
-            
+
             // $table->unsignedBigInteger('question_id');
             $table->timestamps();
 
             $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             // $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
+
+            $table->unique(['user_id', 'team_id']);
         });
     }
 
