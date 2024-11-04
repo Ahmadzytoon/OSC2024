@@ -116,7 +116,7 @@ BagGuard
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="{{route('user.voting.index')}}" class="logo me-auto"><img src="/assets/logo.svg" alt="JuryVote"></a><a href="index.html">JuryVote</a></h1>
+      <h1 class="logo me-auto"><a href="{{route('user.voting.index')}}" class="logo me-auto"><img src="/assets/logo.svg" alt="JuryVote"></a><a href="{{route('user.voting.index')}}">JuryVote</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
 
         <nav id="navbar" class="navbar order-last order-lg-0">
